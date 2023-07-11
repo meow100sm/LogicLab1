@@ -21,7 +21,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/image_logo"
-        app:layout_constraintVertical_bias="0.141" />
+        app:layout_constraintVertical_bias="0.057" />
 
     <Button
         android:id="@+id/main_play"
@@ -51,7 +51,7 @@
     <LinearLayout
         android:id="@+id/linearLayout2"
         android:layout_width="match_parent"
-        android:layout_height="99dp"
+        android:layout_height="70dp"
         android:background="@color/teal_700"
         android:gravity="end"
         android:orientation="horizontal"
@@ -74,7 +74,7 @@
     <ImageView
         android:id="@+id/image_logo"
         android:layout_width="412dp"
-        android:layout_height="261dp"
+        android:layout_height="230dp"
         app:layout_constraintBottom_toTopOf="@+id/linearLayout2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

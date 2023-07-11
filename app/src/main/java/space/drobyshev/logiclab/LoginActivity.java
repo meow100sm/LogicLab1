@@ -10,61 +10,60 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import space.drobyshev.logiclab.databinding.ActivityLoginBinding;
+
 public class LoginActivity extends AppCompatActivity {
 
-    EditText username, password, repassword;
-    Button signup, signin;
+    ActivityLoginBinding binding;
     DBHelper DB;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_login);
+        binding = ActivityLoginBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
 
-        username = findViewById(R.id.username);
-        password = findViewById(R.id.password);
-        repassword = findViewById(R.id.repassword);
-        signup = findViewById(R.id.signup);
-        signin = findViewById(R.id.signin);
         DB = new DBHelper(this);
 
-        signup.setOnClickListener(new View.OnClickListener() {
+        binding.signupButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String user = username.getText().toString();
-                String pass = password.getText().toString();
-                String repass = repassword.getText().toString();
+                String email = binding.signupEmail.getText().toString();
+                String password = binding.signupPassword.getText().toString();
+                String confirmPassword = binding.signupConfirm.getText().toString();
 
-                if (TextUtils.isEmpty(user) || TextUtils.isEmpty(pass) || TextUtils.isEmpty(repass))
-                    Toast.makeText(LoginActivity.this, "All fields Required", Toast.LENGTH_SHORT).show();
+                if (email.equals("") || password.equals("") || confirmPassword.equals(""))
+                    Toast.makeText(LoginActivity.this, "Все поля обязательны для заполнения", Toast.LENGTH_SHORT).show();
                 else {
-                    if (pass.equals(repass)) {
-                        Boolean checkuser = DB.checkusername(user);
-                        if (checkuser == false) {
-                            Boolean insert = DB.insertData(user, pass);
+                    if (password.equals(confirmPassword)) {
+                        Boolean checkUserEmail = DB.checkEmail(email);
+
+                        if (checkUserEmail == false) {
+                            Boolean insert = DB.insertData(email, password);
+
                             if (insert == true) {
-                                Toast.makeText(LoginActivity.this, "Registered Successfully", Toast.LENGTH_SHORT).show();
-                                Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                                Toast.makeText(LoginActivity.this, "Signup Successfully", Toast.LENGTH_SHORT).show();
+                                Intent intent = new Intent(getApplicationContext(), LoginedActivity.class);
                                 startActivity(intent);
                             }else{
-                                Toast.makeText(LoginActivity.this, "Registration Failed", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(LoginActivity.this, "Signup Failed", Toast.LENGTH_SHORT).show();
                             }
                         }else{
-                            Toast.makeText(LoginActivity.this, "User already Exists", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(LoginActivity.this, "User already exists, Please login", Toast.LENGTH_SHORT).show();
                         }
                     }else{
-                        Toast.makeText(LoginActivity.this, "Passwords are not matching", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(LoginActivity.this, "Invalid password", Toast.LENGTH_SHORT).show();
                     }
                 }
             }
         });
-
-        signin.setOnClickListener(new View.OnClickListener() {
+        binding.loginRedirectText.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getApplicationContext(), LoginedActivity.class);
                 startActivity(intent);
             }
         });
+
     }
 }

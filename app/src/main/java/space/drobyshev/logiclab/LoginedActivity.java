@@ -10,40 +10,48 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import space.drobyshev.logiclab.databinding.ActivityLoginBinding;
+import space.drobyshev.logiclab.databinding.ActivityLoginedBinding;
+
 public class LoginedActivity extends AppCompatActivity {
 
-    EditText username, password;
-    Button signin;
+    ActivityLoginedBinding binding;
     DBHelper DB;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_logined);
+        binding = ActivityLoginedBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
 
-        username = findViewById(R.id.username1);
-        password = findViewById(R.id.password1);
-        signin = findViewById(R.id.signin1);
         DB = new DBHelper(this);
 
-        signin.setOnClickListener(new View.OnClickListener() {
+        binding.signinButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String user = username.getText().toString();
-                String pass = password.getText().toString();
+                String email = binding.signinEmail.getText().toString();
+                String password = binding.signinPassword.getText().toString();
 
-                if (TextUtils.isEmpty(user) || TextUtils.isEmpty(pass))
-                    Toast.makeText(LoginedActivity.this, "All fields Required", Toast.LENGTH_SHORT).show();
+                if (email.equals("") || password.equals(""))
+                    Toast.makeText(LoginedActivity.this, "Все поля обязательны для заполнения", Toast.LENGTH_SHORT).show();
                 else {
-                    Boolean checkuserpass = DB.checkusernamepassword(user, pass);
-                    if (checkuserpass == true) {
-                        Toast.makeText(LoginedActivity.this, "Login Succesful", Toast.LENGTH_SHORT).show();
+                    Boolean checkCredentials = DB.checkEmailPassword(email, password);
+                    if (checkCredentials == true) {
+                        Toast.makeText(LoginedActivity.this, "Успешный вход", Toast.LENGTH_SHORT).show();
                         Intent intent = new Intent(getApplicationContext(), MainActivity.class);
                         startActivity(intent);
                     }else{
                         Toast.makeText(LoginedActivity.this, "Login Failed", Toast.LENGTH_SHORT).show();
                     }
                 }
+            }
+        });
+
+        binding.signupRedirectText.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(LoginedActivity.this, LoginActivity.class);
+                startActivity(intent);
             }
         });
     }
