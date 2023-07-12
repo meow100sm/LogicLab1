@@ -28,6 +28,7 @@ public class LoginActivity extends AppCompatActivity {
         binding.signupButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                String emailPattern = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+";
                 String email = binding.signupEmail.getText().toString();
                 String password = binding.signupPassword.getText().toString();
                 String confirmPassword = binding.signupConfirm.getText().toString();
@@ -35,24 +36,32 @@ public class LoginActivity extends AppCompatActivity {
                 if (email.equals("") || password.equals("") || confirmPassword.equals(""))
                     Toast.makeText(LoginActivity.this, "Все поля обязательны для заполнения", Toast.LENGTH_SHORT).show();
                 else {
-                    if (password.equals(confirmPassword)) {
-                        Boolean checkUserEmail = DB.checkEmail(email);
+                    if (email.matches(emailPattern)) {
+                        if (password.length() >= 6) {
+                            if (password.equals(confirmPassword)) {
+                                Boolean checkUserEmail = DB.checkEmail(email);
 
-                        if (checkUserEmail == false) {
-                            Boolean insert = DB.insertData(email, password);
+                                if (checkUserEmail == false) {
+                                    Boolean insert = DB.insertData(email, password);
 
-                            if (insert == true) {
-                                Toast.makeText(LoginActivity.this, "Успешная регистрация", Toast.LENGTH_SHORT).show();
-                                Intent intent = new Intent(getApplicationContext(), LoginedActivity.class);
-                                startActivity(intent);
-                            }else{
-                                Toast.makeText(LoginActivity.this, "Ошибка регистрации", Toast.LENGTH_SHORT).show();
+                                    if (insert == true) {
+                                        Toast.makeText(LoginActivity.this, "Успешная регистрация", Toast.LENGTH_SHORT).show();
+                                        Intent intent = new Intent(getApplicationContext(), LoginedActivity.class);
+                                        startActivity(intent);
+                                    } else {
+                                        Toast.makeText(LoginActivity.this, "Ошибка регистрации", Toast.LENGTH_SHORT).show();
+                                    }
+                                } else {
+                                    Toast.makeText(LoginActivity.this, "Такой пользователь уже существует", Toast.LENGTH_SHORT).show();
+                                }
+                            } else {
+                                Toast.makeText(LoginActivity.this, "Вы ввели разные пароли", Toast.LENGTH_SHORT).show();
                             }
-                        }else{
-                            Toast.makeText(LoginActivity.this, "Такой пользователь уже существует", Toast.LENGTH_SHORT).show();
+                        } else {
+                            Toast.makeText(LoginActivity.this, "Длина пароля должна быть не менее 6 символов", Toast.LENGTH_SHORT).show();
                         }
-                    }else{
-                        Toast.makeText(LoginActivity.this, "Вы ввели разные пароли", Toast.LENGTH_SHORT).show();
+                    } else {
+                        Toast.makeText(LoginActivity.this, "Введите корректный email", Toast.LENGTH_SHORT).show();
                     }
                 }
             }
