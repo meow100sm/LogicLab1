@@ -41,7 +41,9 @@ public class LoginedActivity extends AppCompatActivity {
                         Intent intent = new Intent(getApplicationContext(), MainActivity.class);
                         startActivity(intent);
                     }else{
-                        Toast.makeText(LoginedActivity.this, "Login Failed", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(LoginedActivity.this, "Ошибка входа", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(LoginedActivity.this, "Похоже у вас нет аккаунта, так зарегистрируйтесь!", Toast.LENGTH_SHORT).show();
+
                     }
                 }
             }

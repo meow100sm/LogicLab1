@@ -17,7 +17,7 @@ public class MainActivity extends AppCompatActivity {
         ImageButton person_account = findViewById(R.id.person_account);
         person_account.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
+            public void onClick(View v) {
                 openAccountActivity();
             }
         });
@@ -25,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
         Button main_settings = findViewById(R.id.main_settings);
         main_settings.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
+            public void onClick(View v) {
                 openSettingsActivity();
             }
         });

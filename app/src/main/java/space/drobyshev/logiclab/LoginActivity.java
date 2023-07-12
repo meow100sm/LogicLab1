@@ -42,17 +42,17 @@ public class LoginActivity extends AppCompatActivity {
                             Boolean insert = DB.insertData(email, password);
 
                             if (insert == true) {
-                                Toast.makeText(LoginActivity.this, "Signup Successfully", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(LoginActivity.this, "Успешная регистрация", Toast.LENGTH_SHORT).show();
                                 Intent intent = new Intent(getApplicationContext(), LoginedActivity.class);
                                 startActivity(intent);
                             }else{
-                                Toast.makeText(LoginActivity.this, "Signup Failed", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(LoginActivity.this, "Ошибка регистрации", Toast.LENGTH_SHORT).show();
                             }
                         }else{
-                            Toast.makeText(LoginActivity.this, "User already exists, Please login", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(LoginActivity.this, "Такой пользователь уже существует", Toast.LENGTH_SHORT).show();
                         }
                     }else{
-                        Toast.makeText(LoginActivity.this, "Invalid password", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(LoginActivity.this, "Вы ввели разные пароли", Toast.LENGTH_SHORT).show();
                     }
                 }
             }

@@ -16,31 +16,24 @@ public class DBHelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        db.execSQL("create table users(email TEXT primary key, password TEXT)");
+        db.execSQL("CREATE TABLE users(id INTEGER, email TEXT primary key, password TEXT)");
+        db.execSQL("CREATE TABLE attention_score(id INTEGER primary key, username TEXT, score INTEGER)");
+        db.execSQL("CREATE TABLE users_score(id INTEGER primary key, math INTEGER, memory INTEGER, speed INTEGER, attention INTAGER)");
+        db.execSQL("CREATE TABLE math_score(id INTEGER primary key, username TEXT, score INTEGER)");
+        db.execSQL("CREATE TABLE memory_score(id INTEGER primary key, username TEXT, score INTEGER)");
+        db.execSQL("CREATE TABLE speed_score(id INTEGER primary key, username TEXT, score INTEGER)");
+        db.execSQL("CREATE TABLE users_data(id INTEGER primary key, nick TEXT, emails TEXT, date TEXT)");
     }
-
-//    private void CreateAdditionalTable(SQLiteDatabase db)
-//    {
-//        db.execSQL("DROP TABLE IF EXISTS attention_score");
-//        db.execSQL("DROP TABLE IF EXISTS users_score");
-//        db.execSQL("DROP TABLE IF EXISTS math_score");
-//        db.execSQL("DROP TABLE IF EXISTS memory_score");
-//        db.execSQL("DROP TABLE IF EXISTS speed_score");
-//
-//        db.execSQL("CREATE TABLE attention_score(id INTEGER, username TEXT, score INTEGER)");
-//        db.execSQL("CREATE TABLE users_score(id INTEGER, math INTEGER, memory INTEGER, speed INTEGER, attention INTAGER)");
-//        db.execSQL("CREATE TABLE math_score(id INTEGER, username TEXT, score INTEGER)");
-//        db.execSQL("CREATE TABLE memory_score(id INTEGER, username TEXT, score INTEGER)");
-//        db.execSQL("CREATE TABLE speed_score(id INTEGER, username TEXT, score INTEGER)");
-//        //db.execSQL("CREATE TABLE sqlite_sequence(name, seq)");
-//        //db.execSQL("CREATE TABLE users (id INTEGER PRIMARY KEY AUTOINCREMENT, email VARCHAR(50), password VARCHAR(50))");
-//        //db.execSQL("CREATE TABLE users_data(nick TEXT, email TEXT, date TEXT, id INTEGER)");
-//    }
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int i, int i1) {
         db.execSQL("DROP TABLE IF EXISTS users");
-
+        db.execSQL("DROP TABLE IF EXISTS attention_score");
+        db.execSQL("DROP TABLE IF EXISTS users_score");
+        db.execSQL("DROP TABLE IF EXISTS math_score");
+        db.execSQL("DROP TABLE IF EXISTS memory_score");
+        db.execSQL("DROP TABLE IF EXISTS speed_score");
+        db.execSQL("DROP TABLE IF EXISTS users_data");
     }
 
     public Boolean insertData(String email, String password) {
@@ -51,8 +44,6 @@ public class DBHelper extends SQLiteOpenHelper {
         values.put("password", password);
 
         long result = db.insert("users", null, values);
-
-//        CreateAdditionalTable(db);
 
         if (result == -1) return false;
         else
