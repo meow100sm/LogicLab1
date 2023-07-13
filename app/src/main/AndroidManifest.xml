@@ -37,6 +37,10 @@
             android:exported="true"
             android:label="Личный кабинет"
             android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".MemoryGame"
+            android:exported="true"
+            android:label="Тренируем память"/>
 
     </application>
 

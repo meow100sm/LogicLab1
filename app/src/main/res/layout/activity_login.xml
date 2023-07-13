@@ -16,18 +16,19 @@
         android:orientation="vertical">
 
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Welcome!"
+            android:text="Добро Пожаловать!"
             android:textColor="@color/teal_200"
             android:textSize="40dp"
             android:gravity="center"
             android:layout_gravity="center"/>
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Sign up"
+            android:text="Регистрация"
             android:textSize="40dp"
+            android:textStyle="bold"
             android:textColor="@color/teal_200"
             android:gravity="center"
             android:layout_gravity="center"/>
@@ -43,7 +44,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:id="@+id/signup_email"
-                android:hint="Email"
+                android:hint="Эл. почта"
                 android:textSize="15dp"
                 android:textColorHint="@color/blue"
                 android:drawableLeft="@drawable/ic_email_24"
@@ -55,7 +56,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:id="@+id/signup_password"
-                android:hint="Password"
+                android:hint="Пароль"
                 android:inputType="textPassword"
                 android:textSize="15dp"
                 android:padding="8dp"
@@ -68,7 +69,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:id="@+id/signup_confirm"
-                android:hint="Confirm Password"
+                android:hint="Подтверждение пароля"
                 android:inputType="textPassword"
                 android:textSize="15dp"
                 android:padding="8dp"
@@ -81,7 +82,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="70dp"
                 android:id="@+id/signup_button"
-                android:text="Sign Up"
+                android:text="Зарегистрироваться"
                 android:textSize="20dp"
 
                 android:background="@drawable/edittextbackground"
@@ -90,7 +91,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/loginRedirectText"
-                android:text="Already an user? Login"
+                android:text="Уже зарегистрированы?"
                 android:layout_gravity="center"
                 android:backgroundTint="@color/white"
                 android:textSize="15dp"

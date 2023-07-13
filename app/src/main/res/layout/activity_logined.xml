@@ -20,9 +20,9 @@
             android:orientation="vertical">
 
             <TextView
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Sign in"
+                android:text="Вход"
                 android:textStyle="bold"
                 android:textSize="40dp"
                 android:textColor="@color/teal_200"
@@ -40,7 +40,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
                     android:id="@+id/signin_email"
-                    android:hint="Email"
+                    android:hint="Эл. почта"
                     android:textSize="15dp"
                     android:textColorHint="@color/blue"
                     android:drawableLeft="@drawable/ic_email_24"
@@ -52,7 +52,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
                     android:id="@+id/signin_password"
-                    android:hint="Password"
+                    android:hint="Пароль"
                     android:inputType="textPassword"
                     android:textSize="15dp"
                     android:padding="8dp"
@@ -66,7 +66,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="70dp"
                     android:id="@+id/signin_button"
-                    android:text="Sign in"
+                    android:text="Войти"
                     android:textSize="20dp"
 
                     android:background="@drawable/edittextbackground"
@@ -75,7 +75,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:id="@+id/signupRedirectText"
-                    android:text="Not yet registered? Sign up"
+                    android:text="Еще не зарегистрированы?"
                     android:layout_gravity="center"
                     android:backgroundTint="@color/white"
                     android:textSize="15dp"

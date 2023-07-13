@@ -29,6 +29,14 @@ public class MainActivity extends AppCompatActivity {
                 openSettingsActivity();
             }
         });
+
+        Button main_play = findViewById(R.id.main_play);
+        main_play.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openMemoryGameActivity();
+            }
+        });
     }
 
     public void openAccountActivity() {
@@ -38,6 +46,11 @@ public class MainActivity extends AppCompatActivity {
 
     public void openSettingsActivity() {
         Intent intent = new Intent(this, SettingsActivity.class);
+        startActivity(intent);
+    }
+
+    public void openMemoryGameActivity() {
+        Intent intent = new Intent(this, MemoryGame.class);
         startActivity(intent);
     }
 }

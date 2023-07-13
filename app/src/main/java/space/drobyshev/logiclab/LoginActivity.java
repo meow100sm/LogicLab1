@@ -61,7 +61,7 @@ public class LoginActivity extends AppCompatActivity {
                             Toast.makeText(LoginActivity.this, "Длина пароля должна быть не менее 6 символов", Toast.LENGTH_SHORT).show();
                         }
                     } else {
-                        Toast.makeText(LoginActivity.this, "Введите корректный email", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(LoginActivity.this, "Введите корректную эл.почту", Toast.LENGTH_SHORT).show();
                     }
                 }
             }
