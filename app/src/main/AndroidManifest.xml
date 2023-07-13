@@ -11,17 +11,16 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.LogicLab"
         tools:targetApi="31">
-
         <activity
             android:name=".LoginActivity"
             android:exported="true"
             android:label="Logic Lab">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity
             android:name=".LoginedActivity"
             android:exported="false" />
@@ -40,8 +39,15 @@
         <activity
             android:name=".MemoryGame"
             android:exported="true"
-            android:label="Тренируем память"/>
-
+            android:label="Тренируем память" />
+        <activity
+            android:name=".MathGameActivity"
+            android:exported="true"
+            android:label="Математический турнир" />
+        <activity
+            android:name=".MenuActivity"
+            android:exported="true"
+            android:label="Меню игр"/>
     </application>
 
 </manifest>

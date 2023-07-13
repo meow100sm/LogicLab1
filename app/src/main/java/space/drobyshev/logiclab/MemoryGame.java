@@ -32,7 +32,6 @@ public class MemoryGame extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game_memory);
 
-
         iv_11 = findViewById(R.id.iv_11);
         iv_12 = findViewById(R.id.iv_12);
         iv_13 = findViewById(R.id.iv_13);
@@ -326,14 +325,14 @@ public class MemoryGame extends AppCompatActivity {
                 iv_21.getVisibility() == View.INVISIBLE &&
                 iv_22.getVisibility() == View.INVISIBLE) {
             AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(MemoryGame.this);
-            alertDialogBuilder.setMessage("Game Over").setCancelable(false).setPositiveButton("NEW", new DialogInterface.OnClickListener() {
+            alertDialogBuilder.setMessage("Вы выиграли!").setCancelable(false).setPositiveButton("Хотите еще?", new DialogInterface.OnClickListener() {
                 @Override
                 public void onClick(DialogInterface dialogInterface, int i) {
                     Intent intent = new Intent(getApplicationContext(), MemoryGame.class);
                     startActivity(intent);
                     finish();
                 }
-            }).setNegativeButton("EXIT", new DialogInterface.OnClickListener() {
+            }).setNegativeButton("Выйти", new DialogInterface.OnClickListener() {
                 @Override
                 public void onClick(DialogInterface dialogInterface, int i) {
                     finish();

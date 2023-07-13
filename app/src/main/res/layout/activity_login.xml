@@ -43,13 +43,26 @@
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
+                android:id="@+id/signup_Nickname"
+                android:hint="Имя"
+                android:textSize="15dp"
+                android:textColorHint="@color/blue"
+                android:drawableLeft="@drawable/ic_man_24"
+                android:background="@drawable/edittextbackground"
+                android:layout_marginTop="0dp"
+                android:padding="8dp"
+                android:drawablePadding="8dp"/>
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
                 android:id="@+id/signup_email"
                 android:hint="Эл. почта"
                 android:textSize="15dp"
                 android:textColorHint="@color/blue"
                 android:drawableLeft="@drawable/ic_email_24"
                 android:background="@drawable/edittextbackground"
-                android:layout_marginTop="30dp"
+                android:layout_marginTop="20dp"
                 android:padding="8dp"
                 android:drawablePadding="8dp"/>
             <EditText
@@ -84,9 +97,8 @@
                 android:id="@+id/signup_button"
                 android:text="Зарегистрироваться"
                 android:textSize="20dp"
-
                 android:background="@drawable/edittextbackground"
-                android:layout_marginTop="30dp"/>
+                android:layout_marginTop="20dp"/>
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -96,7 +108,7 @@
                 android:backgroundTint="@color/white"
                 android:textSize="15dp"
                 android:textColor="@color/teal_200"
-                android:layout_marginTop="30dp"/>
+                android:layout_marginTop="10dp"/>
         </LinearLayout>
     </LinearLayout>
 

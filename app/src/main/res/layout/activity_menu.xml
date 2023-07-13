@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:weightSum="2"
+    android:orientation="vertical"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:orientation="horizontal"
+        android:weightSum="4">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Здесь ты можешь выбрать логическую игру."
+            android:textColor="@color/blue"
+            android:textSize="23sp"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:layout_gravity="center"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:weightSum="4">
+
+        <Button
+            android:id="@+id/memory_game"
+            android:text="1) Развиваем память"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/edittextbackground1"
+            android:layout_weight="1"
+            android:layout_marginTop="10dp"
+            android:scaleType="centerInside"/>
+
+        <Button
+            android:id="@+id/math_game"
+            android:text="2) Считаем на скорость"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/edittextbackground1"
+            android:layout_weight="1"
+            android:layout_marginTop="10dp"
+            android:scaleType="centerInside"/>
+
+        <Button
+            android:id="@+id/logic_game"
+            android:text="3) Логически мыслим?"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/edittextbackground1"
+            android:layout_weight="1"
+            android:layout_marginTop="10dp"
+            android:scaleType="centerInside"/>
+        <Button
+            android:id="@+id/logic_games"
+            android:text="4) Логически мыслим??"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/edittextbackground1"
+            android:layout_weight="1"
+            android:layout_marginTop="10dp"
+            android:scaleType="centerInside"/>
+
+    </LinearLayout>
+</androidx.appcompat.widget.LinearLayoutCompat>

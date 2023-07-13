@@ -16,7 +16,7 @@ public class DBHelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        db.execSQL("CREATE TABLE users(id INTEGER, email TEXT primary key, password TEXT)");
+        db.execSQL("CREATE TABLE users(id INTEGER, name TEXT, email TEXT primary key, password TEXT)");
         db.execSQL("CREATE TABLE attention_score(id INTEGER primary key, username TEXT, score INTEGER)");
         db.execSQL("CREATE TABLE users_score(id INTEGER primary key, math INTEGER, memory INTEGER, speed INTEGER, attention INTAGER)");
         db.execSQL("CREATE TABLE math_score(id INTEGER primary key, username TEXT, score INTEGER)");
@@ -36,10 +36,11 @@ public class DBHelper extends SQLiteOpenHelper {
         db.execSQL("DROP TABLE IF EXISTS users_data");
     }
 
-    public Boolean insertData(String email, String password) {
+    public Boolean insertData(String name, String email, String password) {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues values = new ContentValues();
 
+        values.put("name", name);
         values.put("email", email);
         values.put("password", password);
 

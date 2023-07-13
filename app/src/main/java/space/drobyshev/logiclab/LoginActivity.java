@@ -32,8 +32,9 @@ public class LoginActivity extends AppCompatActivity {
                 String email = binding.signupEmail.getText().toString();
                 String password = binding.signupPassword.getText().toString();
                 String confirmPassword = binding.signupConfirm.getText().toString();
+                String name = binding.signupNickname.getText().toString();
 
-                if (email.equals("") || password.equals("") || confirmPassword.equals(""))
+                if (email.equals("") || password.equals("") || confirmPassword.equals("") || name.equals(""))
                     Toast.makeText(LoginActivity.this, "Все поля обязательны для заполнения", Toast.LENGTH_SHORT).show();
                 else {
                     if (email.matches(emailPattern)) {
@@ -42,7 +43,7 @@ public class LoginActivity extends AppCompatActivity {
                                 Boolean checkUserEmail = DB.checkEmail(email);
 
                                 if (checkUserEmail == false) {
-                                    Boolean insert = DB.insertData(email, password);
+                                    Boolean insert = DB.insertData(name, email, password);
 
                                     if (insert == true) {
                                         Toast.makeText(LoginActivity.this, "Успешная регистрация", Toast.LENGTH_SHORT).show();

@@ -34,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
         main_play.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                openMemoryGameActivity();
+                openMenuActivity();
             }
         });
     }
@@ -49,8 +49,8 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-    public void openMemoryGameActivity() {
-        Intent intent = new Intent(this, MemoryGame.class);
+    public void openMenuActivity() {
+        Intent intent = new Intent(this, MenuActivity.class);
         startActivity(intent);
     }
 }

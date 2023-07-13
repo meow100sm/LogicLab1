@@ -55,11 +55,11 @@
                     android:hint="Пароль"
                     android:inputType="textPassword"
                     android:textSize="15dp"
-                    android:padding="8dp"
                     android:textColorHint="@color/blue"
                     android:drawableLeft="@drawable/ic_lock_24"
                     android:background="@drawable/edittextbackground"
                     android:layout_marginTop="20dp"
+                    android:padding="8dp"
                     android:drawablePadding="8dp"/>
 
                 <Button
