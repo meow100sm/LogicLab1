@@ -30,36 +30,38 @@ public class MenuActivity extends AppCompatActivity {
         boolean game3 = MyPreferencesUtil.getBooleanValue(this, "GAME3", false);
         boolean game4 = MyPreferencesUtil.getBooleanValue(this, "GAME4", false);
         boolean game5 = MyPreferencesUtil.getBooleanValue(this, "GAME5", false);
+        Log.d("Test","" + game1);
+        Log.d("Test","" + game2);
+        Log.d("Test","" + game3);
+        Log.d("Test","" + game4);
+        Log.d("Test","" + game5);
+
+
 
 
         if (game1 == true){
             ImageView complete1 = findViewById(R.id.complete_game1);
             complete1.setVisibility(View.VISIBLE);
-            Log.d("Test","" + game1);
         }
 
         if (game2 == true){
             ImageView complete2 = findViewById(R.id.complete_game2);
             complete2.setVisibility(View.VISIBLE);
-            Log.d("Test","" + game2);
         }
 
         if (game3 == true){
             ImageView complete3 = findViewById(R.id.complete_game3);
             complete3.setVisibility(View.VISIBLE);
-            Log.d("Test","" + game3);
         }
 
         if (game4 == true){
             ImageView complete4 = findViewById(R.id.complete_game4);
             complete4.setVisibility(View.VISIBLE);
-            Log.d("Test","" + game4);
         }
 
         if (game5 == true){
             ImageView complete5 = findViewById(R.id.complete_game5);
             complete5.setVisibility(View.VISIBLE);
-            Log.d("Test","" + game5);
         }
 
 
