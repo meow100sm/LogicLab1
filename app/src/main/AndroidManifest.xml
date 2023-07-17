@@ -54,6 +54,9 @@
         <activity android:name=".GameAsteroid.GameAsteroidActivity"
             android:exported="true"
             android:label="Берегись астероида"/>
+        <activity android:name=".GameBall.GameBallActivity"
+            android:exported="true"
+            android:label="Мячик"/>
 
         <activity
             android:name=".MenuActivity"

@@ -9,6 +9,8 @@ import android.database.sqlite.SQLiteOpenHelper;
 public class DBHelper extends SQLiteOpenHelper {
 
     public static final String DBNAME = "Login.db";
+    public static final String USERS_TABLE = "users";
+    public static final String USER_DATA_TABLE = "user_data";
 
     public DBHelper(Context context) {
         super(context, "Login.db", null, 1);
@@ -16,23 +18,13 @@ public class DBHelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        db.execSQL("CREATE TABLE users(name TEXT, email TEXT primary key, password TEXT)");
-        db.execSQL("CREATE TABLE attention_score(id INTEGER primary key, username TEXT, score INTEGER)");
-        db.execSQL("CREATE TABLE users_score(id INTEGER primary key, math INTEGER, memory INTEGER, speed INTEGER, attention INTAGER)");
-        db.execSQL("CREATE TABLE math_score(id INTEGER primary key, username TEXT, score INTEGER)");
-        db.execSQL("CREATE TABLE memory_score(id INTEGER primary key, username TEXT, score INTEGER)");
-        db.execSQL("CREATE TABLE speed_score(id INTEGER primary key, username TEXT, score INTEGER)");
-        db.execSQL("CREATE TABLE users_data(id INTEGER primary key, nick TEXT, emails TEXT, date TEXT)");
+        db.execSQL("CREATE TABLE " + USERS_TABLE + "(name TEXT, email TEXT primary key, password TEXT)");
+        db.execSQL("CREATE TABLE " + USER_DATA_TABLE + "(id INTEGER primary key, user_id TEXT, game_data TEXT, score INTEGER, FOREIGN KEY (user_id) REFERENCES " + USERS_TABLE + "(email))");
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int i, int i1) {
         db.execSQL("DROP TABLE IF EXISTS users");
-        db.execSQL("DROP TABLE IF EXISTS attention_score");
-        db.execSQL("DROP TABLE IF EXISTS users_score");
-        db.execSQL("DROP TABLE IF EXISTS math_score");
-        db.execSQL("DROP TABLE IF EXISTS memory_score");
-        db.execSQL("DROP TABLE IF EXISTS speed_score");
         db.execSQL("DROP TABLE IF EXISTS users_data");
     }
 
@@ -44,12 +36,27 @@ public class DBHelper extends SQLiteOpenHelper {
         values.put("email", email);
         values.put("password", password);
 
-        long result = db.insert("users", null, values);
+        long result = db.insert(USERS_TABLE, null, values);
 
         if (result == -1) return false;
         else
             return true;
     }
+
+    public Boolean insertUserData(String email, String gameData, int score) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues values = new ContentValues();
+
+        values.put("user_id", email);
+        values.put("game_data", gameData);
+        values.put("score", score);
+
+        long result = db.insert(USER_DATA_TABLE, null, values);
+
+        if (result == -1) return false;
+        else return true;
+    }
+
 
     public Boolean checkEmail(String email) {
         SQLiteDatabase db = this.getWritableDatabase();

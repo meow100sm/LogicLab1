@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.Button;
 
 import space.drobyshev.logiclab.GameAsteroid.GameAsteroidActivity;
+import space.drobyshev.logiclab.GameBall.GameBallActivity;
 import space.drobyshev.logiclab.GameMath.MathGameActivity;
 import space.drobyshev.logiclab.GameMemory.MemoryGame;
 import space.drobyshev.logiclab.GamePlusMinus.PlusMinusGameActivity;
@@ -16,7 +17,7 @@ public class MenuActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_menu);
+        setContentView(R.layout.activity_menuu);
 
         Button memory_game = findViewById(R.id.memory_game);
         memory_game.setOnClickListener(new View.OnClickListener() {
@@ -49,6 +50,14 @@ public class MenuActivity extends AppCompatActivity {
                 openGameAsteroidActivity();
             }
         });
+
+        Button game_ball = findViewById(R.id.game_ball);
+        game_ball.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openGameBallActivity();
+            }
+        });
     }
     public void openMemoryGameActivity() {
         Intent intent = new Intent(this, MemoryGame.class);
@@ -66,6 +75,11 @@ public class MenuActivity extends AppCompatActivity {
 
     public void openGameAsteroidActivity() {
         Intent intent = new Intent(this, GameAsteroidActivity.class);
+        startActivity(intent);
+    }
+
+    public void openGameBallActivity() {
+        Intent intent = new Intent(this, GameBallActivity.class);
         startActivity(intent);
     }
 
