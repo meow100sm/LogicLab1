@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+<manifest
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
     <application
@@ -12,38 +13,48 @@
         android:theme="@style/Theme.LogicLab"
         tools:targetApi="31">
         <activity
-            android:name=".LoginActivity"
+            android:name=".Authorization.LoginActivity"
             android:exported="true"
             android:label="Logic Lab">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity
-            android:name=".LoginedActivity"
+            android:name=".Authorization.LoginedActivity"
             android:exported="false" />
         <activity
             android:name=".MainActivity"
             android:exported="false" />
         <activity
-            android:name=".SettingsActivity"
-            android:exported="false"
-            android:parentActivityName=".AccountActivity" />
+            android:name=".SettingActivity"
+            android:exported="false" />
         <activity
             android:name=".AccountActivity"
             android:exported="true"
             android:label="Личный кабинет"
             android:parentActivityName=".MainActivity" />
+
         <activity
-            android:name=".MemoryGame"
+            android:name=".GameMemory.MemoryGame"
             android:exported="true"
             android:label="Тренируем память" />
+
         <activity
-            android:name=".MathGameActivity"
+            android:name=".GameMath.MathGameActivity"
             android:exported="true"
             android:label="Математический турнир" />
+
+        <activity
+            android:name=".GamePlusMinus.PlusMinusGameActivity"
+            android:exported="true"
+            android:label="Плюс минус"/>
+
+        <activity android:name=".GameAsteroid.GameAsteroidActivity"
+            android:exported="true"
+            android:label="Берегись астероида"/>
+
         <activity
             android:name=".MenuActivity"
             android:exported="true"

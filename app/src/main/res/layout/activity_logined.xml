@@ -8,7 +8,7 @@
     android:padding="10dp"
     android:background="@color/white"
     android:orientation="vertical"
-    tools:context=".LoginedActivity">
+    tools:context=".Authorization.LoginedActivity">
 
     <ScrollView
         android:layout_width="match_parent"

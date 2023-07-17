@@ -1,4 +1,4 @@
-package space.drobyshev.logiclab;
+package space.drobyshev.logiclab.GameMath;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -9,7 +9,9 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ProgressBar;
 import android.widget.TextView;
-import android.widget.Toast;
+
+import space.drobyshev.logiclab.GameMath.MathGame;
+import space.drobyshev.logiclab.R;
 
 public class MathGameActivity extends AppCompatActivity {
 

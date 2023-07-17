@@ -1,4 +1,4 @@
-package space.drobyshev.logiclab;
+package space.drobyshev.logiclab.GameMemory;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
@@ -9,10 +9,11 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.view.View;
 import android.widget.ImageView;
-import android.widget.TextView;
 
 import java.util.Arrays;
 import java.util.Collections;
+
+import space.drobyshev.logiclab.R;
 
 public class MemoryGame extends AppCompatActivity {
 

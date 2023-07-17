@@ -22,11 +22,11 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        Button main_settings = findViewById(R.id.main_settings);
-        main_settings.setOnClickListener(new View.OnClickListener() {
+        Button main_setting = findViewById(R.id.main_setting);
+        main_setting.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                openSettingsActivity();
+                openSettingActivity();
             }
         });
 
@@ -44,8 +44,8 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-    public void openSettingsActivity() {
-        Intent intent = new Intent(this, SettingsActivity.class);
+    public void openSettingActivity() {
+        Intent intent = new Intent(this, SettingActivity.class);
         startActivity(intent);
     }
 

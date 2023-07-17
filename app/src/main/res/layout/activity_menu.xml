@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.appcompat.widget.LinearLayoutCompat
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:weightSum="2"
     android:orientation="vertical"
@@ -11,7 +12,7 @@
         android:layout_height="match_parent"
         android:layout_weight="1"
         android:orientation="horizontal"
-        android:weightSum="4">
+        android:weightSum="5">
         <TextView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -28,7 +29,7 @@
         android:layout_height="match_parent"
         android:layout_weight="1"
         android:orientation="vertical"
-        android:weightSum="4">
+        android:weightSum="5">
 
         <Button
             android:id="@+id/memory_game"
@@ -51,8 +52,8 @@
             android:scaleType="centerInside"/>
 
         <Button
-            android:id="@+id/logic_game"
-            android:text="3) Логически мыслим?"
+            android:id="@+id/plusminus_game"
+            android:text="3) Обыграй бота!"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="@drawable/edittextbackground1"
@@ -60,8 +61,18 @@
             android:layout_marginTop="10dp"
             android:scaleType="centerInside"/>
         <Button
-            android:id="@+id/logic_games"
-            android:text="4) Логически мыслим??"
+            android:id="@+id/asteroid_game"
+            android:text="4) Берегись астероида!"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/edittextbackground1"
+            android:layout_weight="1"
+            android:layout_marginTop="10dp"
+            android:scaleType="centerInside"/>
+
+        <Button
+            android:id="@+id/game_2048"
+            android:text="5) игра 2048"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="@drawable/edittextbackground1"

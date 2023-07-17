@@ -18,7 +18,7 @@ public class AccountActivity extends AppCompatActivity {
         button_home.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                openMainActivity();
+                openAccountActivity();
             }
         });
 
@@ -26,20 +26,18 @@ public class AccountActivity extends AppCompatActivity {
         button_settings.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                openSettingsActivity();
+                openSettingActivity();
             }
         });
-
         TextView user_name = findViewById(R.id.user_name);
-
     }
 
-    public void openSettingsActivity() {
-        Intent intent = new Intent(this, SettingsActivity.class);
+    public void openSettingActivity() {
+        Intent intent = new Intent(this, SettingActivity.class);
         startActivity(intent);
     }
 
-    public void openMainActivity() {
+    public void openAccountActivity() {
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
     }

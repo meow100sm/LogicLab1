@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MathGameActivity">
+    tools:context=".GameMath.MathGameActivity">
 
     <Button
         android:id="@+id/btn_start"
@@ -91,7 +91,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:height="200dp"
-                android:background="#39A8FD"
+                android:background="@drawable/edittextbackground"
                 android:text="answer1"
                 android:textSize="15sp" />
 
@@ -101,7 +101,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:height="200dp"
-                android:background="#39A8FD"
+                android:background="@drawable/edittextbackground"
                 android:text="answer2"
                 android:textSize="15sp" />
         </TableRow>
@@ -116,7 +116,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:height="200dp"
-                android:background="#39A8FD"
+                android:background="@drawable/edittextbackground"
                 android:text="answer3"
                 android:textSize="15sp" />
 
@@ -126,7 +126,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:height="200dp"
-                android:background="#39A8FD"
+                android:background="@drawable/edittextbackground"
                 android:text="answer4"
                 android:textSize="15sp" />
         </TableRow>

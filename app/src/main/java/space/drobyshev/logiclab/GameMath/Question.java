@@ -1,4 +1,4 @@
-package space.drobyshev.logiclab;
+package space.drobyshev.logiclab.GameMath;
 
 import java.util.Random;
 
