@@ -3,21 +3,60 @@ package space.drobyshev.logiclab;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 
 import space.drobyshev.logiclab.GameAsteroid.GameAsteroidActivity;
 import space.drobyshev.logiclab.GameBall.GameBallActivity;
 import space.drobyshev.logiclab.GameMath.MathGameActivity;
 import space.drobyshev.logiclab.GameMemory.MemoryGame;
 import space.drobyshev.logiclab.GamePlusMinus.PlusMinusGameActivity;
+import space.drobyshev.logiclab.util.MyPreferencesUtil;
 
 public class MenuActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menuu);
+
+
+        boolean game1 = MyPreferencesUtil.getBooleanValue(this, "GAME1", false);
+        boolean game2 = MyPreferencesUtil.getBooleanValue(this, "GAME2", false);
+        boolean game3 = MyPreferencesUtil.getBooleanValue(this, "GAME3", false);
+        boolean game4 = MyPreferencesUtil.getBooleanValue(this, "GAME4", false);
+        boolean game5 = MyPreferencesUtil.getBooleanValue(this, "GAME5", false);
+
+
+        if (game1 == true){
+            ImageView complete1 = findViewById(R.id.complete_game1);
+            complete1.setVisibility(View.VISIBLE);
+        }
+
+        if (game2 == true){
+            ImageView complete2 = findViewById(R.id.complete_game2);
+            complete2.setVisibility(View.VISIBLE);
+        }
+
+        if (game3 == true){
+            ImageView complete3 = findViewById(R.id.complete_game3);
+            complete3.setVisibility(View.VISIBLE);
+        }
+
+        if (game4 == true){
+            ImageView complete4 = findViewById(R.id.complete_game4);
+            complete4.setVisibility(View.VISIBLE);
+        }
+
+        if (game5 == true){
+            ImageView complete5 = findViewById(R.id.complete_game5);
+            complete5.setVisibility(View.VISIBLE);
+        }
+
+
 
         Button memory_game = findViewById(R.id.memory_game);
         memory_game.setOnClickListener(new View.OnClickListener() {
@@ -58,6 +97,10 @@ public class MenuActivity extends AppCompatActivity {
                 openGameBallActivity();
             }
         });
+
+
+
+
     }
     public void openMemoryGameActivity() {
         Intent intent = new Intent(this, MemoryGame.class);
@@ -82,6 +125,7 @@ public class MenuActivity extends AppCompatActivity {
         Intent intent = new Intent(this, GameBallActivity.class);
         startActivity(intent);
     }
+
 
 
 }

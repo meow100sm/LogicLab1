@@ -10,8 +10,11 @@ import android.widget.Button;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
+import java.sql.Array;
+
 import space.drobyshev.logiclab.GameMath.MathGame;
 import space.drobyshev.logiclab.R;
+import space.drobyshev.logiclab.util.MyPreferencesUtil;
 
 public class MathGameActivity extends AppCompatActivity {
 
@@ -53,6 +56,7 @@ public class MathGameActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game_math);
+        MyPreferencesUtil.putBooleanValue(this, "Game1", true);
 
         btn_start = findViewById(R.id.btn_start);
         btn_answer0 = findViewById(R.id.btn_answer0);
