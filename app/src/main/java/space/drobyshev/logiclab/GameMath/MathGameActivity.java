@@ -57,6 +57,11 @@ public class MathGameActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game_math);
         MyPreferencesUtil.putBooleanValue(this, "Game1", true);
+        MyPreferencesUtil.putBooleanValue(this, "Game2", true);
+        MyPreferencesUtil.putBooleanValue(this, "Game3", true);
+        MyPreferencesUtil.putBooleanValue(this, "Game4", true);
+        MyPreferencesUtil.putBooleanValue(this, "Game5", true);
+
 
         btn_start = findViewById(R.id.btn_start);
         btn_answer0 = findViewById(R.id.btn_answer0);

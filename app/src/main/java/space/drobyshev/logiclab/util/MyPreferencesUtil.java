@@ -14,8 +14,10 @@ public class MyPreferencesUtil {
             myPreferences = PreferenceManager.getDefaultSharedPreferences(context);
             myEditor = myPreferences.edit();
         }
-        myEditor.putBoolean(key, value);
-        myEditor.apply();
+        if (myEditor != null) { // Добавить эту проверку
+            myEditor.putBoolean(key, value);
+            myEditor.apply();
+        }
     }
 
     // Методы для других типов данных можно добавить по аналогии
