@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -34,26 +35,31 @@ public class MenuActivity extends AppCompatActivity {
         if (game1 == true){
             ImageView complete1 = findViewById(R.id.complete_game1);
             complete1.setVisibility(View.VISIBLE);
+            Log.d("Test","" + game1);
         }
 
         if (game2 == true){
             ImageView complete2 = findViewById(R.id.complete_game2);
             complete2.setVisibility(View.VISIBLE);
+            Log.d("Test","" + game2);
         }
 
         if (game3 == true){
             ImageView complete3 = findViewById(R.id.complete_game3);
             complete3.setVisibility(View.VISIBLE);
+            Log.d("Test","" + game3);
         }
 
         if (game4 == true){
             ImageView complete4 = findViewById(R.id.complete_game4);
             complete4.setVisibility(View.VISIBLE);
+            Log.d("Test","" + game4);
         }
 
         if (game5 == true){
             ImageView complete5 = findViewById(R.id.complete_game5);
             complete5.setVisibility(View.VISIBLE);
+            Log.d("Test","" + game5);
         }
 
 

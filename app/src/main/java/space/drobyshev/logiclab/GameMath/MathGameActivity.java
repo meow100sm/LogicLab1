@@ -2,9 +2,11 @@ package space.drobyshev.logiclab.GameMath;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.os.Handler;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ProgressBar;
@@ -13,6 +15,7 @@ import android.widget.TextView;
 import java.sql.Array;
 
 import space.drobyshev.logiclab.GameMath.MathGame;
+import space.drobyshev.logiclab.MenuActivity;
 import space.drobyshev.logiclab.R;
 import space.drobyshev.logiclab.util.MyPreferencesUtil;
 
@@ -56,11 +59,13 @@ public class MathGameActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game_math);
+
         MyPreferencesUtil.putBooleanValue(this, "Game1", true);
         MyPreferencesUtil.putBooleanValue(this, "Game2", true);
         MyPreferencesUtil.putBooleanValue(this, "Game3", true);
         MyPreferencesUtil.putBooleanValue(this, "Game4", true);
         MyPreferencesUtil.putBooleanValue(this, "Game5", true);
+
 
 
         btn_start = findViewById(R.id.btn_start);
@@ -134,5 +139,12 @@ public class MathGameActivity extends AppCompatActivity {
         tv_questions.setText(g.getCurrentQuestion().getQuestionPhrase());
 
         tv_botmessage.setText(g.getNumberCorrect() + "/" + (g.getTotalQuestions() - 1));
+    }
+
+    @Override
+    public void onBackPressed() {
+       Intent intent = new Intent(this, MenuActivity.class);
+       startActivity(intent);
+        super.onBackPressed();
     }
 }
