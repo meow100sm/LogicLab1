@@ -1,10 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
+    android:layout_height="match_parent"
     android:background="@drawable/background"
-    android:weightSum="4"
+    android:onClick="openAccountActivity"
     android:orientation="vertical"
-    android:layout_height="match_parent">
+    android:weightSum="4">
+
 
     <LinearLayout
         android:id="@+id/linearLayout"
@@ -13,15 +16,16 @@
         android:layout_weight="1"
         android:orientation="horizontal"
         android:weightSum="4">
+
         <TextView
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity=""
+            android:gravity="center"
             android:text="Игра развиваем память! Всё что тебе нужно это нажимать на лапки и запоминать пару одинаковых животных!"
             android:textColor="@color/blue"
-            android:textSize="23sp"
-            android:textStyle="bold"
-            android:gravity="center"
-            android:layout_gravity="center"/>
+            android:textSize="24dp"
+            android:textStyle="bold" />
     </LinearLayout>
 
     <LinearLayout
@@ -103,6 +107,7 @@
             android:scaleType="centerInside"
             android:src="@drawable/paw" />
     </LinearLayout>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -142,4 +147,5 @@
             android:scaleType="centerInside"
             android:src="@drawable/paw" />
     </LinearLayout>
+
 </androidx.appcompat.widget.LinearLayoutCompat>

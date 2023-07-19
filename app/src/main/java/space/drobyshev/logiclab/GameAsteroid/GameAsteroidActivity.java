@@ -1,6 +1,7 @@
 package space.drobyshev.logiclab.GameAsteroid;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.MotionEvent;
 import android.view.View;
@@ -9,7 +10,9 @@ import android.widget.LinearLayout;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import space.drobyshev.logiclab.AccountActivity;
 import space.drobyshev.logiclab.R;
+import space.drobyshev.logiclab.SettingActivity;
 
 public class GameAsteroidActivity extends AppCompatActivity implements View.OnTouchListener {
     public static boolean isLeftPressed = false; // нажата левая кнопка

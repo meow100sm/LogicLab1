@@ -1,6 +1,7 @@
 package space.drobyshev.logiclab;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatDelegate;
 
 import android.content.Context;
 import android.content.Intent;
@@ -11,6 +12,11 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.SeekBar;
 import android.widget.Toast;
+
+import android.content.res.Configuration;
+import android.widget.EditText;
+import android.widget.TextView;
+import java.util.Locale;
 
 public class SettingActivity extends AppCompatActivity {
 
@@ -23,6 +29,20 @@ public class SettingActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_setting);
+
+        Button night_theme = findViewById(R.id.night_theme);
+        night_theme.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) { NightTheme(); }
+        });
+
+        Button day_theme = findViewById(R.id.day_theme);
+        day_theme.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                DayTheme();
+            }
+        });
 
         mPlayer= MediaPlayer.create(this, R.raw.main_music);
         mPlayer.setLooping(true); // Чтобы музыка проигрывалась в цикле
@@ -97,5 +117,12 @@ public class SettingActivity extends AppCompatActivity {
 //        if (mPlayer.isPlaying()) {
 //            stopPlay();
 //        }
+    }
+    public void NightTheme() {
+        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
+    }
+
+    public void DayTheme() {
+        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
     }
 }

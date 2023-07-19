@@ -2,6 +2,7 @@ package space.drobyshev.logiclab.GameMath;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.CountDownTimer;
@@ -14,9 +15,11 @@ import android.widget.TextView;
 
 import java.sql.Array;
 
+import space.drobyshev.logiclab.AccountActivity;
 import space.drobyshev.logiclab.GameMath.MathGame;
 import space.drobyshev.logiclab.MenuActivity;
 import space.drobyshev.logiclab.R;
+import space.drobyshev.logiclab.SettingActivity;
 import space.drobyshev.logiclab.util.MyPreferencesUtil;
 
 public class MathGameActivity extends AppCompatActivity {
@@ -55,6 +58,7 @@ public class MathGameActivity extends AppCompatActivity {
         }
     };
 
+    @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

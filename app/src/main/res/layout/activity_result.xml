@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ResultActivity"
+    tools:ignore="MissingDefaultResource">
+
+    <TextView
+        android:id="@+id/result"
+        android:layout_width="275dp"
+        android:layout_height="61dp"
+        android:fontFamily="sans-serif-thin"
+        android:text="Результаты"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+        android:textColor="@color/BIR"
+        android:textSize="50dp"
+        app:layout_constraintBottom_toTopOf="@+id/main_play"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.501"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView2"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <View
+        android:id="@+id/divider"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:background="@color/BIR"
+        app:layout_constraintBottom_toBottomOf="@+id/toolbar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.098" />
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@color/BIR"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
+
+
+    <ImageButton
+        android:id="@+id/person_account"
+        android:layout_width="73dp"
+        android:layout_height="58dp"
+        android:background="@drawable/button_selector"
+        android:contentDescription="Личный кабинет"
+        android:onClick="openAccountActivity"
+        android:src="@drawable/ic_person"
+        tools:layout_editor_absoluteX="338dp"
+        tools:layout_editor_absoluteY="546dp"
+        tools:ignore="MissingConstraints" />
+
+    <ImageButton
+        android:id="@+id/button_settings"
+        android:layout_width="66dp"
+        android:layout_height="57dp"
+        android:layout_alignParentEnd="true"
+        android:background="@drawable/button_selector"
+        android:contentDescription="Настройки"
+        android:onClick="openSettingActivity"
+        app:srcCompat="@drawable/ic_setting"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteY="546dp" />
+
+    <Button
+        android:id="@+id/main_play"
+        android:layout_width="258dp"
+        android:layout_height="74dp"
+        android:backgroundTint="@color/BIR1"
+        android:onClick="openMenuActivity"
+        android:text="уровни"
+        android:textSize="32dp"
+        app:layout_constraintBottom_toTopOf="@+id/toolbar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.49"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView2"
+        app:layout_constraintVertical_bias="0.861"
+        app:rippleColor="#A2FFFB"
+        app:strokeColor="#A2FFFB" />
+
+    <Button
+        android:id="@+id/other_result"
+        android:layout_width="213dp"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/BIR1"
+        android:text="Др. Результаты"
+        android:textSize="20dp"
+        app:layout_constraintBottom_toTopOf="@+id/imageView2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.501"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/divider"
+        app:layout_constraintVertical_bias="0.515" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="265dp"
+        android:layout_height="276dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.381"
+        app:srcCompat="@drawable/___2_" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

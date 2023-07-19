@@ -13,7 +13,10 @@ import android.widget.ImageView;
 import java.util.Arrays;
 import java.util.Collections;
 
+import space.drobyshev.logiclab.AccountActivity;
 import space.drobyshev.logiclab.R;
+import space.drobyshev.logiclab.ResultActivity;
+import space.drobyshev.logiclab.SettingActivity;
 
 public class MemoryGame extends AppCompatActivity {
 
@@ -326,10 +329,10 @@ public class MemoryGame extends AppCompatActivity {
                 iv_21.getVisibility() == View.INVISIBLE &&
                 iv_22.getVisibility() == View.INVISIBLE) {
             AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(MemoryGame.this);
-            alertDialogBuilder.setMessage("Вы выиграли!").setCancelable(false).setPositiveButton("Хотите еще?", new DialogInterface.OnClickListener() {
+            alertDialogBuilder.setMessage("Вы выиграли!").setCancelable(false).setPositiveButton("Результаты", new DialogInterface.OnClickListener() {
                 @Override
                 public void onClick(DialogInterface dialogInterface, int i) {
-                    Intent intent = new Intent(getApplicationContext(), MemoryGame.class);
+                    Intent intent = new Intent(getApplicationContext(), ResultActivity.class);
                     startActivity(intent);
                     finish();
                 }

@@ -132,7 +132,7 @@
         <ImageButton
             android:id="@+id/person_account"
             android:layout_width="100dp"
-            android:layout_height="100dp"
+            android:layout_height="match_parent"
             android:background="@drawable/button_selector"
             android:contentDescription="Личный кабинет"
             android:onClick="openAccountActivity"

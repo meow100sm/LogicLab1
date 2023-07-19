@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     tools:context=".GameAsteroid.GameAsteroidActivity">
     <LinearLayout
@@ -21,12 +21,15 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="50"
-            android:text="Left" />
+            android:text="Left"
+            android:textSize="24dp"/>
         <Button
             android:id="@+id/rightButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="50"
-            android:text="Right" />
+            android:text="Right"
+            android:textSize="24dp"/>
     </LinearLayout>
+
 </LinearLayout>
